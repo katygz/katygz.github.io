@@ -3,34 +3,15 @@
 }
 
 .tile.is-child {
-    width: 100%;
-    margin: 10px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    width: 0; /* set its parent div to 0 width, let flex-grow stop growing */
 }
 
 .tile.is-child .title {
+    /* text-overflow: ellipsis; */
     overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    text-wrap: nowrap; */
     font-size: 1.2rem;
-    max-width: 90%;
     height: 4rem;
-}
-
-@media (max-width: 768px) {
-    .tile.is-child {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .tile.is-child .title {
-        font-size: 1rem;
-        white-space: normal;
-        text-overflow: clip;
-    }
 }
 
 .modal-card-title {
@@ -49,3 +30,4 @@
 .experience-points {
     display: none;
 }
+
