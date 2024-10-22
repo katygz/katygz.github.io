@@ -2,14 +2,17 @@
     padding: 5.15rem 1.5rem 0.15rem 1.5rem;
 }
 
-.tile.is-child {
-    width: 0; /* set its parent div to 0 width, let flex-grow stop growing */
+/*大屏幕需要限制，小屏幕不需要*/
+@media screen and (min-width:560px) {
+    .tile.is-child {
+        /*width: 0;*/ /*set its parent div to 0 width, let flex-grow stop growing*/
+    }
 }
 
-.tile.is-child .title {
-    /* text-overflow: ellipsis; */
+.tile.is-child .title{
+    /*text-overflow: ellipsis;
     overflow: hidden;
-    text-wrap: nowrap; */
+    text-wrap: nowrap;*/
     font-size: 1.2rem;
     height: 4rem;
 }
@@ -18,16 +21,24 @@
     flex-shrink: 1;
 }
 
+
 .navbar.is-primary {
     position: fixed;
     width: 100%;
 }
 
-.hero-body {
-    padding: 4rem 1.5rem;
+.navbar-menu.is-active {
+    color: white;
+    background-color: #454545;
 }
-
-.experience-points {
+.navbar-menu.is-active .github-icon-right {
     display: none;
 }
 
+
+.hero-body {
+    padding: 4rem 1.5rem;
+}
+.experience-points {
+    display: none;
+}

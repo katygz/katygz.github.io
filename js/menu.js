@@ -58,9 +58,9 @@ function addClickEvent() {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             // console.log(this, '====', this.hash, '----', e.target.hash, '****')
-            console.log(e)
+            // console.log(e)
             const section = document.querySelector(e.target.hash);
-            console.log(section)
+            // console.log(section)
             window.scrollTo({
                 top: section.offsetTop,
                 behavior: 'smooth'
@@ -70,7 +70,18 @@ function addClickEvent() {
 }
 
 
+function mobileBurgerMenu () {
+    const myNav = document.querySelector("#top_navbar")
+    const burger = document.querySelector("#burger_menu")
+    burger.addEventListener('click', ()=> {
+        myNav.classList.toggle("is-active")
+        burger.classList.toggle("is-active")
+    })
+}
+
+
 function displayMenuItems () {
+    mobileBurgerMenu ();
     const navItemsWrap = document.getElementById('navItemsWrap');
     const itemDivs = createMenuItems();
     navItemsWrap.innerHTML = itemDivs.join('\n');
